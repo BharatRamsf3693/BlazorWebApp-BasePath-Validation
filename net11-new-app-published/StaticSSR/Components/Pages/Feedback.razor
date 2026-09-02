@@ -1,0 +1,52 @@
+@page "/feedback"
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>Feedback</PageTitle>
+
+<h1>Feedback</h1>
+
+<EditForm Model="Form" FormName="feedback" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <InputText id="name" class="form-control" @bind-Value="Form.Name" />
+        <ValidationMessage For="() => Form.Name" />
+    </div>
+
+    <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <InputTextArea id="message" class="form-control" @bind-Value="Form.Message" />
+        <ValidationMessage For="() => Form.Message" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send feedback</button>
+</EditForm>
+
+@if (Submitted)
+{
+    <div class="alert alert-success mt-3" role="status">
+        Feedback from <strong>@Form.Name</strong> was received by the server.
+    </div>
+}
+
+@code {
+    [SupplyParameterFromForm]
+    private FeedbackForm Form { get; set; } = new();
+
+    private bool Submitted { get; set; }
+
+    private void HandleValidSubmit()
+    {
+        Submitted = true;
+    }
+
+    private sealed class FeedbackForm
+    {
+        [Required]
+        public string Name { get; set; } = string.Empty;
+
+        [Required]
+        public string Message { get; set; } = string.Empty;
+    }
+}

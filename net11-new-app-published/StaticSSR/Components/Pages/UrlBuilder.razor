@@ -1,0 +1,16 @@
+@page "/url-builder"
+@inject NavigationManager Navigation
+
+<PageTitle>URL builder</PageTitle>
+
+<h1>URL builder</h1>
+
+<p>Relative path:</p>
+<code>@RelativePath</code>
+
+<p class="mt-3">Absolute URL built from that relative path:</p>
+<code>@Navigation.ToAbsoluteUri(RelativePath)</code>
+
+@code {
+    private const string RelativePath = "reports/summary";
+}

@@ -50,17 +50,17 @@ The published output files are provided in the following **Evidence** folder loc
      - A self-signed certificate can be used for local validation.
      - If a certificate is not available, create one and bind it to the website.
 
-5. Click **OK** to create the website.
+5. Add the required host name.
 
-6. Right-click the created website and select **Add Application**.
+6. Click **OK** to create the website.
 
-7. Specify the required application alias (for example, `staticssr`, `interactiveserver`, or `interactivewebassembly`).
+7. Right-click the created website and select **Add Application**.
 
-8. Map the application to the corresponding published output folder.
+8. Specify the required application alias (for example, `staticssr`, `interactiveserver`, or `interactivewebassembly`).
 
-9. Select the required application pool.
+9. Map the application to the corresponding published output folder.
 
-10. Add the required host name.
+10. Select the required application pool.
 
 11. Browse to the application using the HTTPS URL. For example:
 

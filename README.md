@@ -28,11 +28,9 @@ The feature was tested in the following scenarios:
 
 ## Deploying and Testing the Published Output in IIS
 
-Published outputs for all samples are available under the **Evidence** folder.
-
 ### Published Output Packages
 
-The published output files are provided in the following locations:
+The published output files are provided in the following **Evidence** folder locations:
 
 - [New .NET 11 App - Published Binaries](https://github.com/BharatRamsf3693/BlazorWebApp-BasePath-Validation/blob/main/Evidence/net11-new-app/PublishedBinaries.zip)
 - [Upgraded .NET 10 to .NET 11 App - Published Binaries](https://github.com/BharatRamsf3693/BlazorWebApp-BasePath-Validation/blob/main/Evidence/net10-to-net11-upgrade/PublishedBinaries.zip)

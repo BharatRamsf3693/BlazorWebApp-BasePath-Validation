@@ -102,8 +102,17 @@ The following IIS URL Rewrite rule was used:
             <rules>
                 <rule name="ReverseProxyInboundRule1" stopProcessing="true">
                     <match url="(.*)" />
-                    <action type="Rewrite"
-                            url="https://blazorwebapp.basepathvalidation.com/interactivewebassembly/{R:1}" />
+					<conditions>
+						<add
+							input="{URL}"
+							pattern="^/([^/]+)(?:/|$)"
+							ignoreCase="true" />
+					</conditions>
+                    <action type="Rewrite" url="https://blazorwebapp.basepathvalidation.com/interactivewebassembly/{R:1}" />
+					 <serverVariables>
+                        <set name="HTTP_X_FORWARDED_HOST" value="{HTTP_HOST}" />
+						<set name="HTTP_X_FORWARDED_PREFIX" value="/{C:1}" />
+                    </serverVariables>
                 </rule>
             </rules>
         </rewrite>
